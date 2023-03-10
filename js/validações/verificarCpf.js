@@ -4,13 +4,11 @@ export default function verificaCpf(cpf) {
             const checaNumero = cpf.split(".").join("");
             const checaDigito = checaNumero.split("-").join("");
             if (checarNumero(checaDigito)) {
-                console.log("o número é um inteiro válido");
-                checarValidadeCpf(checaDigito);
+                return checarValidadeCpf(checaDigito);
             }
         } else {
             if (checarNumero(cpf)) {
-                console.log("o número é um inteiro válido");
-                checarValidadeCpf(cpf);
+                return checarValidadeCpf(cpf);
             }
         }
     } else {
@@ -37,6 +35,7 @@ const checarValidadeCpf = (cpf) => {
         console.log(restoDivisao2);
 
         if (restoDivisao1 && restoDivisao2) {
+            console.log("cpf válido")
             return true;
         } else {
             return false;
